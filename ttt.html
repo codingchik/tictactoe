@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="tictactoeApp">
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script src="ttt.js"></script>
+<link rel="stylesheet" href="ttt.css">
+</head>
+
+<body ng-controller="TicTacController">
+	<div ng-repeat"c in board track by $index" ng-click="($scope)">
+		{{c}}
+	</div>
+
+</body>
+
+<!-- <div class="row{{ $index+ 1 }}" x-ng-repeat= "row in board track by $index">
+	<div class="box" x-ng-repeat="cell in row track by $index">
+	 {{$index}} 
+	<div>
+	</div>-->
