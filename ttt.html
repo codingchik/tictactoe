@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="tictactoeApp">
 <head>
- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 <script src="ttt.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="ttt.css">
 </head>
-
+<h1>Tic Tac Toe</h1>
 <body ng-controller="TicTacController">
-	<div ng-repeat="c in board track by $index">
-		{{c}}
+	
+<div class="board">
+	<div ng-repeat="c in cells">
+
+	<div class="allCells" ng-click="playerpick(c)" ng-class="{clickX: nowCell.position == "X", clickY: nextCell.position == "O"}">
+		{{c.position}}
 	</div>
-
+	</div>
+</div>
 </body>
-
-<!-- <div class="row{{ $index+ 1 }}" x-ng-repeat= "row in board track by $index">
-	<div class="box" x-ng-repeat="cell in row track by $index">
-	 {{$index}} 
-	<div>
-	</div>-->
+</html>
