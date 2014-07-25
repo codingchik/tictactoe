@@ -3,16 +3,14 @@
 <head>
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 <script src="ttt.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="ttt.css">
 </head>
-<h1>Tic Tac Toe</h1>
+
 <body ng-controller="TicTacController">
-	
+
 <div class="board">
 	<div ng-repeat="c in cells">
-
-	<div class="allCells" ng-click="playerpick(c)" ng-class="{clickX: nowCell.position == "X", clickY: nextCell.position == "O"}">
+	<div class="allCells"  ng-click="clickedCell($index)" ng-class="{xClick: c.position =='X', oClick: c.position =='O'}">
 		{{c.position}}
 	</div>
 	</div>

@@ -1,33 +1,33 @@
-var app = angular.module('tictactoeApp',  []);
+var tictactoeApp = angular.module('tictactoeApp', []);
 
-app.controller('TicTacController', function ($scope) {
+tictactoeApp.controller('TicTacController', function ($scope) {
 
 	$scope.cells = [
-	{position:''},
-	{position:''},
-	{position:''},
-	{position:''},
-	{position:''},
-	{position:''},
-	{position:''},
-	{position:''},
-	{position:''},
-	] ;
-	$scope.playerpick = function(c) {
+	 {position: ' '}, 
+	 {position: ' '},
+	 {position: ' '},
+	 {position: ' '},
+	 {position: ' '},
+	 {position: ' '},
+	 {position: ' '},
+	 {position: ' '},
+	 {position: ' '}
+];
+	
+	
+	$scope.count = 0;
 
-		//if cells[c] 
+	$scope.clickedCell = function(placeholder) {
+		if ($scope.cells[placeholder].position == ' ') {
+			
+			if ($scope.count % 2 == 0 ) {
+				$scope.cells[placeholder].position = 'X';
+			} else {
+				$scope.cells[placeholder].position = 'O';
+			}	
+			$scope.count+=1;
+		}
 	}
-	/*$scope.playerpick = function(nowCell) {
-		nowCell.position = "X";
-	} ;
-
-	$scope.playerpick = function(nextCell) {
-		nextCell.position = "O";
-	} ; */
-
 });
-
-
-
 
 

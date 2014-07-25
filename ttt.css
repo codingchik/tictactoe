@@ -1,13 +1,8 @@
 body {
-	background-image: url("tron.jpg");
-	background-repeat: repeat-y;
-	background-size: 117% 81%;
+	background-image:url('tron.jpg');
+	background-size: cover;
 }
-h1 {
-	font-family: 'Audiowide', cursive;
-	color: #12FDFD;
-	padding-top: 
-}
+
 .board {
 	width: 400px;
 	height: 500px;
@@ -27,11 +22,10 @@ h1 {
 	opacity: .5;
 }
 
-.clickX {
-	background-color: red;
+.xClick {
+	color: red;
 }
 
-.clickY {
-	background-color: blue;
+.oClick {
+	color: blue;
 }
-
