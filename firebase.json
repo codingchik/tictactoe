@@ -1,0 +1,9 @@
+{
+  "firebase": "tronttt",
+  "public": "/Users/belle/Desktop/Projects/TicTacToe",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

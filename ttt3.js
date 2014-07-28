@@ -1,8 +1,13 @@
-var tictactoeApp = angular.module('tictactoeApp', []);
+var tictactoeApp = angular.module('tictactoeApp', ["firebase"]);
 var checkWin;
 var alertWin;
 
-tictactoeApp.controller('TicTacController', function ($scope) {
+tictactoeApp.controller('TicTacController', function ($scope, $firebase) {
+//connect firebase
+$scope.remoteGameContainer = 
+$firebase(new Firebase("https://tronttt.firebaseIO.com/databaseGameContainer")) ;
+
+$scope.count = 0;
 //setup board of empty arrays
   $scope.cells = [
   {status: ' '}, 
@@ -16,8 +21,20 @@ tictactoeApp.controller('TicTacController', function ($scope) {
   {status: ' '}
   ];
 
+// gamecontainer to sync to firebase
+$scope.gameContainer = {
+  cellListArray: $scope.cells,
+  clickCounter: $scope.count
+};
+//remoteGameContainer for Firebase node
+$scope.remoteGameContainer.$bind($scope, "gameContainer") ;
+
+$scope.$watch('gameContainer', function() {
+    console.log('gameCountainer changed!') ;
+  }) ;
+
+
 //counter to set clicks to X or 0 
-$scope.count = 0;
 
 $scope.clickedCell = function(index) {
   if ($scope.cells[index].status == ' ') {
@@ -86,9 +103,9 @@ $scope.reset = function(c){
 //alert winner
 $scope.alertWin =  function() {
   if ($scope.count % 2 == 0 ) {
-     alert('O is the winner');
+     alert('O is the winner!');
  } else
-    alert('X is the winner');
+    alert('X is the winner!');
 };
 
 });
