@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="tictactoeApp">
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+ <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+<script src="ttt3.js"></script>
+<link rel="stylesheet" href="ttt3.css">
+
+</head>
+<header class="header">
+<h1>Tic Tac Toe</h1>
+<button ng-click="reset(c)">
+  Play Again 
+</button>
+</header>
+
+<body ng-controller="TicTacController">
+
+<div class="board">
+	<div ng-repeat="c in cells">
+	<div class="allCells"  ng-click="clickedCell($index)" 
+	ng-class="{xClick: c.status =='X' , oClick: c.status =='O'}">
+		{{c.status}}
+	</div>
+	</div>
+</div>
+
+</body>
+</html>
